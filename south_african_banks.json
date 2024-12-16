@@ -1,0 +1,94 @@
+{
+  "banks": [
+    {
+      "name": "FNB",
+      "website": null,
+      "packages": [
+        {
+          "type": "cheque",
+          "packageName": "FNB Easy PAYU",
+          "minimumBalance": 2000,
+          "interestRate": 0,
+          "monthlyFee": 6.50,
+          "withdrawalFee": "10 per 1000-2000 after 14 per 100",
+          "cashDeposit": "1.60 per 100",
+          "onlineTransactionalFee": 1,
+          "smsNotification": 1.25,
+          "internalDebitOrder": 0,
+          "externalDebitOrder": 3.50,
+          "features": [
+            "Unlimited card swipes"
+          ]
+        },
+        {
+            "type": "savings",
+            "packageName": "string",
+            "interestRate": "float",
+            "monthlyFee": "int",
+            "features": [
+              "Features"
+            ]
+        }
+      ]
+    },
+
+
+    {
+        "name": "absa",
+        "website": null,
+        "packages": [
+          {
+            "type": "cheque",
+            "packageName": "Transact",
+            "minimumBalance": 20,
+            "interestRate": 0,
+            "monthlyFee": 5.50,
+            "withdrawalFee": "10 per 1000",
+            "cashDeposit": "2.50 per 100",
+            "onlineTransactionalFee": "1",
+            "smsNotification": "0.60",
+            "internalDebitOrder": 0,
+            "externalDebitOrder": 3.50,
+            "features": [
+                "Features"
+            ]
+          },
+          {
+            "type": "saving",
+            "packageName": "name",
+            "interestRate": "float",
+            "monthlyFee": "int",
+            "features": [
+              "features"
+            ]
+          }          
+        ]
+    },
+
+
+    {
+        "name": "Bank B",
+        "website": null,
+        "packages": [
+          {
+            "type": "account",
+            "packageName": "",
+            "interestRate": "float",
+            "monthlyFee": "int",
+            "features": [
+                "Features"
+            ]
+          },
+          {
+            "type": "saving",
+            "packageName": "name",
+            "interestRate": "float",
+            "monthlyFee": "int",
+            "features": [
+              "features"
+            ]
+          }          
+        ]
+    }
+  ]
+}
