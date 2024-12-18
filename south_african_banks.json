@@ -22,8 +22,29 @@
         },
         {
             "type": "savings",
-            "packageName": "string",
-            "interestRate": "float",
+            "packageName": "savings account",
+            "interestRate": [
+              {
+                "range": "R1 - R19,999",
+                "nominalRate": 6.55,
+                "effectiveRate": 6.75
+              },
+              {
+                "range": "R20,000 - R49,999",
+                "nominalRate": 6.95,
+                "effectiveRate": 7.18
+              },
+              {
+                "range": "R50,000 - R99,999",
+                "nominalRate": 7.10,
+                "effectiveRate": 7.34
+              },
+              {
+                "range": "R100,000 - R50,000,000+",
+                "nominalRate": 7.25,
+                "effectiveRate": 7.50
+              }
+            ],
             "monthlyFee": "int",
             "features": [
               "Features"
@@ -31,7 +52,6 @@
         }
       ]
     },
-
 
     {
         "name": "absa",
@@ -56,7 +76,44 @@
           {
             "type": "saving",
             "packageName": "name",
-            "interestRate": "float",
+            "interestRate": {
+              "ranges": [
+                "R1,000 to R100,000",
+                "R100,001 to R999,999",
+                "R1,000,000 +"
+              ],
+              "terms": [
+                {
+                    "term": "8 - to 31 days",
+                    "rates": ["6.20%", "6.30%", "6.30%"]
+                },
+                {
+                    "term": "1 month",
+                    "rates": ["7.15%", "7.25%", "7.30%"]
+                },
+                {
+                    "term": "2 months",
+                    "rates": ["7.15%", "7.25%", "7.30%"],
+                    "maturityRates": ["7.17%", "7.27%", "7.32%"]
+                },
+                {
+                    "term": "3 months",
+                    "rates": ["7.30%", "7.40%", "7.50%"],
+                    "maturityRates": ["7.34%", "7.44%", "7.54%"]
+                },
+                {
+                    "term": "4 months",
+                    "rates": ["7.30%", "7.40%", "7.50%"],
+                    "maturityRates": ["7.37%", "7.47%", "7.57%"]
+                },
+                {
+                    "term": "60 months",
+                    "rates": ["8.40%", "8.45%", "8.45%"],
+                    "maturityRates": ["10.36%", "10.41%", "10.41%"]
+                }
+              ]
+
+            },
             "monthlyFee": "int",
             "features": [
               "features"
