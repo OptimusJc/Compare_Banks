@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> {% title block %} {% endblock %}</title>
-    </head>
+        <title>{% block title %} land {% endblock %}</title>
     </head>
     <body>
+        <nav class="navbar navbar-expand">
         {% block content %}
         {% endblock %}
     </body>

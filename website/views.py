@@ -1,11 +1,11 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 views = Blueprint('views', __name__)
 
 
 @views.route('/', methods=['GET'])
 def home():
-    return "<h1> HEllo </h1>"
+    return render_template("home.html")
 
 
 @views.route('/about', methods=['GET'])
