@@ -1,6 +1,6 @@
 import sqlite3
 
-# Connect to SQLite database (it will create the file if it doesn't exist)
+# Connect to SQLite database
 conn = sqlite3.connect('BankDatabase.db')
 cursor = conn.cursor()
 
@@ -20,14 +20,14 @@ CREATE TABLE IF NOT EXISTS AccountTypes (
     BankID INTEGER,
     Type TEXT NOT NULL,
     PackageName TEXT NOT NULL,
-    MinimumBalance REAL,
-    MonthlyFee REAL,
-    WithdrawalFee TEXT,
-    CashDepositFee TEXT,
-    OnlineTransactionalFee REAL,
-    SMSNotificationFee REAL,
-    InternalDebitOrderFee REAL,
-    ExternalDebitOrderFee REAL,
+    MinimumBalance REAL DEFAULT NULL,
+    MonthlyFee REAL DEFAULT NULL,
+    WithdrawalFee TEXT DEFAULT NULL,
+    CashDepositFee TEXT DEFAULT NULL,
+    OnlineTransactionalFee REAL DEFAULT NULL,
+    SMSNotificationFee REAL DEFAULT NULL,
+    InternalDebitOrderFee REAL DEFAULT NULL,
+    ExternalDebitOrderFee REAL DEFAULT NULL,
     FOREIGN KEY (BankID) REFERENCES Banks(BankID)
 )
 ''')
@@ -63,14 +63,16 @@ INSERT INTO AccountTypes (BankID, Type, PackageName, MinimumBalance,
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ''', [
     # FNB cheque account
-    (1, 'cheque', 'FNB Easy PAYU', 1, 6.5, '10 per 1000-2000 after 14 per 100', 
-     '1.60 per 100', 1, 1.25, 0, 3.5),
+    (1, 'cheque', 'FNB Easy PAYU', 1, 6.5, 
+     '10 per 1000-2000 after 14 per 100', '1.60 per 100', 1, 1.25, 0, 3.5),
     # FNB savings account
-    (1, 'savings', 'savings account', 1, None, None, None, None, None, None, None),
+    (1, 'savings', 'savings account', None, None, None, None, None, None, None, None),
     # ABSA cheque account
-    (2, 'cheque', 'Transact', 20, 6.5, '10 per 1000', '2.50 per 100', 1, 0.6, 0, 3.5),
+    (2, 'cheque', 'Transact', 20, 6.5, '10 per 1000', '2.50 per 100', 
+     1, 0.6, 0, 3.5),
     # ABSA savings account
-    (2, 'savings', 'Trusave savings account', None, None, None, None, None, None, None)
+    (2, 'savings', 'Trusave savings account', None, None, None, None, 
+     None, None, None, None)
 ])
 
 # Insert data into the InterestRates table
@@ -107,3 +109,4 @@ conn.commit()
 conn.close()
 
 print("Data has been inserted into the SQLite database.")
+
