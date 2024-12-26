@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Banks</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Compare Banks</h1>
+
+    <h2>Checking Accounts</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Bank Name</th>
+                <th>Website</th>
+                <th>Package Name</th>
+                <th>Minimum Balance</th>
+                <th>Monthly Fee</th>
+                <th>Withdrawal Fee</th>
+                <th>Cash Deposit Fee</th>
+                <th>Online Transactional Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for account in checking_accounts %}
+                <tr>
+                    <td>{{ account.BankName }}</td>
+                    <td><a href="{{ account.Website }}" target="_blank">{{ account.Website }}</a></td>
+                    <td>{{ account.PackageName }}</td>
+                    <td>{{ account.MinimumBalance if account.MinimumBalance else 'N/A' }}</td>
+                    <td>{{ account.MonthlyFee if account.MonthlyFee else 'N/A' }}</td>
+                    <td>{{ account.WithdrawalFee if account.WithdrawalFee else 'N/A' }}</td>
+                    <td>{{ account.CashDepositFee if account.CashDepositFee else 'N/A' }}</td>
+                    <td>{{ account.OnlineTransactionalFee if account.OnlineTransactionalFee else 'N/A' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Savings Accounts</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Bank Name</th>
+                <th>Website</th>
+                <th>Package Name</th>
+                <th>Minimum Balance</th>
+                <th>Monthly Fee</th>
+                <th>Withdrawal Fee</th>
+                <th>Cash Deposit Fee</th>
+                <th>Online Transactional Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for account in savings_accounts %}
+                <tr>
+                    <td>{{ account.BankName }}</td>
+                    <td><a href="{{ account.Website }}" target="_blank">{{ account.Website }}</a></td>
+                    <td>
+                        {% if account.PackageName %}
+                        {{ account.PackageName }}
+                        {% endif %}
+                    </td>
+                    <td>{{ account.MinimumBalance if account.MinimumBalance else 'N/A' }}</td>
+                    <td>{{ account.MonthlyFee if account.MonthlyFee else 'N/A' }}</td>
+                    <td>{{ account.WithdrawalFee if account.WithdrawalFee else 'N/A' }}</td>
+                    <td>{{ account.CashDepositFee if account.CashDepositFee else 'N/A' }}</td>
+                    <td>{{ account.OnlineTransactionalFee if account.OnlineTransactionalFee else 'N/A' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

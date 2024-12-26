@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banks</title>
+</head>
+<body>
+    <h1>Available Banks</h1>
+    <ul>
+        {% for bank in banks %}
+            <li>
+                <a href="/banks/{{ bank.BankID }}">{{ bank.BankName }}</a> - 
+                <a href="{{ bank.Website }}" target="_blank">Visit Website</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

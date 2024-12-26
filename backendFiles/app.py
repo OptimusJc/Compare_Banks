@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import sqlite3
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def get_db_connection():
     return conn
 
 
-@app.route('/api/banks', methods=['GET'])
+@app.route('/banks', methods=['GET'])
 def get_banks():
     """
     Gets all banks from that banks table
@@ -23,10 +23,11 @@ def get_banks():
     cursor.execute('SELECT * FROM Banks')
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
-    return jsonify(banks)
+    # return jsonify(banks)
+    return render_template('banks.html', banks=banks)
 
 
-@app.route('/api/accounts', methods=['GET'])
+@app.route('/accounts', methods=['GET'])
 def get_account_types():
     """
     Gets all account types
@@ -44,8 +45,7 @@ def get_account_types():
     conn.close()
     return jsonify(account_types)
 
-
-@app.route('/api/interest_rates', methods=['GET'])
+@app.route('/interest_rates', methods=['GET'])
 def get_interest_rates():
     '''
     Gets all interest rates
@@ -64,7 +64,7 @@ def get_interest_rates():
     return jsonify(interest_rates)
 
 
-@app.route('/api/banks/<int:bank_id>', methods=['GET'])
+@app.route('/banks/<int:bank_id>', methods=['GET'])
 def get_bank_details(bank_id):
     '''
     gets bank details
@@ -88,7 +88,45 @@ def get_bank_details(bank_id):
     bank_details = dict(bank)
     bank_details['account_types'] = account_types
 
-    return jsonify(bank_details)
+    # return jsonify(bank_details)
+    return render_template('bank_details.html',
+                           bank=dict(bank),
+                           account_types=account_types)
+
+
+@app.route('/compare', methods=['GET'])
+def compare_banks():
+    '''
+    '''
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    query_checking = '''
+    SELECT b.BankName, b.Website, a.Type, a.PackageName, a.MinimumBalance, 
+        a.MonthlyFee, a.WithdrawalFee, a.CashDepositFee, a.OnlineTransactionalFee
+    FROM Banks b
+    JOIN AccountTypes a ON b.BankID = a.BankID
+    WHERE a.Type = 'cheque'
+    '''
+
+    cursor.execute(query_checking)
+    checking_account = [dict(row) for row in cursor.fetchall()]
+
+    query_savings = '''
+    SELECT b.BankName, b.Website, a.Type, a.PackageName, a.MinimumBalance, 
+           a.MonthlyFee, a.WithdrawalFee, a.CashDepositFee, a.OnlineTransactionalFee
+    FROM Banks b
+    JOIN AccountTypes a ON b.BankID = a.BankID
+    WHERE a.Type = 'savings'
+    '''
+    cursor.execute(query_savings)
+    savings_account = [dict(row) for row in cursor.fetchall()]
+
+    conn.close()
+
+    return render_template('compare.html',
+                           checking_account=checking_account,
+                           savings_account=savings_account)
 
 
 if __name__ == "__main__":
