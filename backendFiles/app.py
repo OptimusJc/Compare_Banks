@@ -106,8 +106,8 @@ def compare_banks():
     
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
-#    return render_template('compare_banks.html',
-#                           banks=banks)
+    #return render_template('compare.html',
+    #                       banks=banks)
     return jsonify(banks)
 
 """"
