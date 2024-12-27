@@ -99,7 +99,10 @@ def compare_banks():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    cursor.execute('SELECT * FROM AccountTypes')
+    query = ''' SELECT * FROM Banks LEFT JOIN AccountTypes ON Banks.BankID = AccountTypes.BankID  '''
+    cursor.execute(query)
+
+    #cursor.execute('SELECT * FROM AccountTypes')
     
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
