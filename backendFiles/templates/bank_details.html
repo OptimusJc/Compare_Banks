@@ -2,6 +2,26 @@
 <html>
 <head>
     <title>{{ bank.BankName }} Details</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+
 </head>
 <body>
     <h1>{{ bank.BankName }}</h1>
@@ -27,7 +47,7 @@
                     {% else %}
                         Monthly Fee: R 0.00
                     {% endif %}
-                    
+
                     {% if account.MonthlyFee %}
                         Monthly Fee: R {{ '%0.2f'|format(account.MonthlyFee|float) }}
                     {% else %}
@@ -37,5 +57,27 @@
             {% endif %}
         {% endfor %}
     </ul>
+
+   <table>
+        <thead>
+            <th>Bank Name</th>
+            <th>Package Name</th>
+            <th>Minimum Balance</th>
+            <th>Monthly Fee</th>
+            <>
+        </thead>
+        <tbody>
+            {% for account in account_types %}
+            <tr>
+                <td> {{ bank.BankID }} </td>
+                <td> {{ account.PackageName }} </td>
+                <td> R {{ '%0.2f'| format(account.MinimumBalance)|float if account.MinimumBalance else '0.00'}} </td>
+                <td> R {{ '%0.2f'| format(account.MonthlyFee)| float if account.MonthlyFee else '0.00' }}</td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+
 </body>
 </html>

@@ -88,12 +88,26 @@ def get_bank_details(bank_id):
     bank_details = dict(bank)
     bank_details['account_types'] = account_types
 
-    # return jsonify(bank_details)
-    return render_template('bank_details.html',
-                           bank=dict(bank),
-                           account_types=account_types)
+    return jsonify(bank_details)
+#    return render_template('bank_details.html',
+#                           bank=dict(bank),
+#                           account_types=account_types)
 
 
+@app.route('/compare_banks', methods=['GET'])
+def compare_banks():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT * FROM AccountTypes')
+    
+    banks = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+#    return render_template('compare_banks.html',
+#                           banks=banks)
+    return jsonify(banks)
+
+""""
 @app.route('/compare', methods=['GET'])
 def compare_banks():
     '''
@@ -127,7 +141,7 @@ def compare_banks():
     return render_template('compare.html',
                            checking_account=checking_account,
                            savings_account=savings_account)
-
+"""
 
 if __name__ == "__main__":
     app.run(debug=True)
