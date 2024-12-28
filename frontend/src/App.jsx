@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       {/* hero section */}
-      {/* <Hero /> */}
+      <Hero />
       {/* section one */}
       <div className='py-12'>
         <div className='container mx-auto'>
