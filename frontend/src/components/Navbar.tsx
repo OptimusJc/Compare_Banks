@@ -38,6 +38,14 @@ export default function Navbar() {
           </li>
           <li className='text-center'>
             <a
+              href='/about'
+              className='block px-4 py-2 hover:bg-gray-700 md:hover:bg-transparent'
+            >
+              About Us
+            </a>
+          </li>
+          <li className='text-center'>
+            <a
               href='/login'
               className='block bg-blue-600 px-4 py-2 text-white hover:bg-blue-500 md:hover:bg-transparent'
             >

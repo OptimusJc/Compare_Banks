@@ -4,7 +4,8 @@ import './index.css';
 import App from './App.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import Navbar from './components/Navbar';
-import Compare from './pages/Compare.tsx';
+import Footer from './components/Footer';
+import Compare from './pages/Compare';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,5 +16,6 @@ createRoot(document.getElementById('root')).render(
         <Route index path='/compare' element={<Compare />} />
       </Routes>
     </Router>
+    <Footer />
   </StrictMode>,
 );
