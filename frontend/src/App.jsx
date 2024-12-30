@@ -1,5 +1,6 @@
 import Card from './components/Card';
 import Hero from './components/Hero';
+import Hero2 from './components/Hero2';
 
 function App() {
   return (
@@ -46,6 +47,8 @@ function App() {
           </div>
         </div>
       </div>
+      {/* hero section 3 & 4 */}
+      <Hero2 />
     </div>
   );
 }
