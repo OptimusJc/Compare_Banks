@@ -17,11 +17,11 @@ function Hero() {
               Get Started
             </button>
           </div>
-          <div className='h-52 w-full overflow-hidden md:h-60 md:w-1/2 lg:h-80'>
+          <div className='flex h-52 w-full items-center justify-center overflow-hidden md:h-60 md:w-1/2 lg:h-80'>
             <img
               src='https://placehold.co/1900x1280'
               alt='hero image'
-              className='object-cover'
+              className='w-full object-cover'
             />
           </div>
         </div>
