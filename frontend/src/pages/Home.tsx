@@ -12,9 +12,9 @@ export default function Home() {
       <div className='py-12'>
         <div className='container mx-auto'>
           <div className='text-center'>
-            <h1 className='text-4xl font-bold md:text-6xl'>
+            <h2 className='text-4xl font-bold md:text-5xl lg:text-6xl'>
               How Compare Banks Works
-            </h1>
+            </h2>
             <p className='py-2 text-base md:text-lg'>
               Simplify your bank package comparisons effortlessly with Compare
               Banks
