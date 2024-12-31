@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
 
       {/* section one */}
-      <div className='py-12'>
+      <section className='py-12'>
         <div className='container mx-auto'>
           <div className='text-center'>
             <h2 className='text-4xl font-bold md:text-5xl lg:text-6xl'>
@@ -46,18 +46,20 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* section 3 & 4 */}
-      <div className='space-y-5 py-10 md:space-y-8'>
+      {/* section 3 */}
+      <section className='container mx-auto py-7'>
         <div className='flex flex-col space-y-5 text-balance md:items-center md:justify-around lg:flex-row lg:justify-evenly lg:space-y-0'>
-          <div className='flex h-80 w-full justify-center overflow-hidden px-2 md:h-96 md:w-[800px] md:bg-center lg:w-[600px]'>
+          {/* image */}
+          <div className='flex h-80 w-full justify-center overflow-hidden px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
             <img
               src='https://placehold.co/700x700'
-              alt='Hero Image-2'
+              alt='section 3 image'
               className='w-full border-4 border-black bg-blue-100 object-cover'
             />
           </div>
+          {/* body */}
           <div className='w-full px-2 md:pl-24 lg:w-1/2 lg:p-6'>
             <h3 className='text-3xl font-bold md:text-4xl'>
               Simplify Your Bank Comparisons
@@ -87,8 +89,12 @@ export default function Home() {
             </button>
           </div>
         </div>
+      </section>
+
+      {/* section 4 */}
+      <section className='contianer mx-auto py-7'>
         <div className='flex flex-col space-y-5 text-balance md:items-center md:justify-around lg:flex-row lg:justify-evenly lg:space-y-0'>
-          <div className='order-2 flex h-80 w-full justify-center overflow-hidden px-2 md:h-96 md:w-[800px] md:bg-center lg:w-[600px]'>
+          <div className='order-2 flex h-80 w-full justify-center overflow-hidden px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
             <img
               src='https://placehold.co/700x700'
               alt='Hero Image-2'
@@ -115,7 +121,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
