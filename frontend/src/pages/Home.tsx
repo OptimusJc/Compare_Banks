@@ -20,7 +20,7 @@ export default function Home() {
               Banks
             </p>
           </div>
-          <div className='flex flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-evenly md:space-y-6 lg:gap-2'>
+          <div className='flex flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-evenly md:space-y-2 lg:gap-2'>
             <Card
               index={1}
               title='Select Your Package'

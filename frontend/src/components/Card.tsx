@@ -10,7 +10,7 @@ export default function Card({
   description: string;
 }) {
   return (
-    <div className='flex h-96 w-72 flex-col items-center justify-center gap-12 rounded-lg bg-gray-100 p-2 shadow-xl md:w-80 lg:w-64 lg:gap-4'>
+    <div className='flex h-96 w-72 flex-col items-center justify-center gap-12 rounded-lg bg-gray-100 p-2 shadow-xl md:w-80 md:gap-2 lg:w-80 lg:gap-4'>
       <div className='flex flex-col items-center justify-center text-balance text-center'>
         <div className='mb-14 flex h-20 w-20 items-center justify-center rounded-full bg-blue-200 text-3xl text-blue-600'>
           {index}
