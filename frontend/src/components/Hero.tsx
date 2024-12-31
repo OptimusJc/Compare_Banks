@@ -17,7 +17,7 @@ function Hero() {
               Get Started
             </button>
           </div>
-          <div className='flex h-52 w-full items-center justify-center overflow-hidden md:h-60 md:w-1/2 lg:h-80'>
+          <div className='flex h-52 w-full items-center justify-center overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
             <img
               src='https://placehold.co/1900x1280'
               alt='hero image'
