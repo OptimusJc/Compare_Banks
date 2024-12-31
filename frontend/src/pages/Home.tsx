@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* section 4 */}
-      <section className='contianer mx-auto py-7'>
+      <section className='container mx-auto py-7'>
         <div className='flex flex-col space-y-5 text-balance md:items-center md:justify-around lg:flex-row lg:justify-evenly lg:space-y-0'>
           <div className='order-2 flex h-80 w-full justify-center overflow-hidden px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
             <img
@@ -120,6 +120,12 @@ export default function Home() {
               Start Your Free Comparison!
             </button>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <div></div>
         </div>
       </section>
     </div>
