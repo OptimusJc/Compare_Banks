@@ -11,7 +11,7 @@ export default function Navbar() {
     <div className='bg-blue-200'>
       <nav className='container mx-auto flex items-center justify-between p-4'>
         <p className='text-xl font-bold md:text-2xl'>
-          <span className='text-blue-500'>Compare</span> Banks
+          <span className='text-blue-500'>Compare</span>Banks
         </p>
         <button
           className='text-3xl focus:outline-none md:hidden'
