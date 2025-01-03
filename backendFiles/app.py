@@ -94,57 +94,29 @@ def get_bank_details(bank_id):
 #                           account_types=account_types)
 
 
-@app.route('/compare_banks', methods=['GET'])
+@app.route('/compare', methods=['GET'])
 def compare_banks():
     conn = get_db_connection()
     cursor = conn.cursor()
 
     query = ''' SELECT * FROM Banks LEFT JOIN AccountTypes ON Banks.BankID = AccountTypes.BankID  '''
+    # joined = ''' SELECT * FROM  InterestRates   WHERE AccountTypeID = ?''' + query
     cursor.execute(query)
 
     #cursor.execute('SELECT * FROM AccountTypes')
     
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
-    #return render_template('compare.html',
-    #                       banks=banks)
+
+    #return render_template('com.html', banks=banks)
     return jsonify(banks)
 
-""""
-@app.route('/compare', methods=['GET'])
-def compare_banks():
-    '''
-    '''
-    conn = get_db_connection()
-    cursor = conn.cursor()
 
-    query_checking = '''
-    SELECT b.BankName, b.Website, a.Type, a.PackageName, a.MinimumBalance, 
-        a.MonthlyFee, a.WithdrawalFee, a.CashDepositFee, a.OnlineTransactionalFee
-    FROM Banks b
-    JOIN AccountTypes a ON b.BankID = a.BankID
-    WHERE a.Type = 'cheque'
-    '''
+@app.route('/land', methods=['GET'])
+def land():
+    ''''''
+    return render_template('landing_page.html')
 
-    cursor.execute(query_checking)
-    checking_account = [dict(row) for row in cursor.fetchall()]
-
-    query_savings = '''
-    SELECT b.BankName, b.Website, a.Type, a.PackageName, a.MinimumBalance, 
-           a.MonthlyFee, a.WithdrawalFee, a.CashDepositFee, a.OnlineTransactionalFee
-    FROM Banks b
-    JOIN AccountTypes a ON b.BankID = a.BankID
-    WHERE a.Type = 'savings'
-    '''
-    cursor.execute(query_savings)
-    savings_account = [dict(row) for row in cursor.fetchall()]
-
-    conn.close()
-
-    return render_template('compare.html',
-                           checking_account=checking_account,
-                           savings_account=savings_account)
-"""
 
 if __name__ == "__main__":
     app.run(debug=True)

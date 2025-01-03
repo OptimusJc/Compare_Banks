@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        .comparison-table th {
+            background-color: #0077b6;
+            color: white;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .comparison-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .comparison-table td.highlight {
+            font-weight: bold;
+            color: #0077b6;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bank Comparison</h1>
+    <p>Find the best bank for your needs</p>
+</header>
+
+<div class="container">
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Bank</th>
+                <th>Package Name</th>
+                <th>Type</th>
+                <th>Interest Rate</th>
+                <th>Monthly Fees</th>
+                <th>Minimum Balance</th>
+                <th>Withdrawal Fee</th>
+                <th>Cash deposit Fee</th>
+                <th>SMS Fee</th>
+                <th>Online Transactional Fee</th>
+                <th>Internal debit order</th>
+                <th>External debit order</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bank in banks %}
+            <tr>
+                <td><a href="{{ bank.Website }}">{{ bank.BankName }}</a></td>
+                <td>{{ bank.PackageName }}</td>
+                <td>{{ bank.Type }} </td>
+                <td class="highlight">{{ bank.interest_rate }}%</td>
+                <td>R {{ '%0.2f'|format(bank.MonthlyFee)|float if bank.MonthlyFee else '0.00' }}</td>
+                <td>R {{ '%0.2f'| format(bank.MinimumBalance)|float if bank.MinimumBalance else 'R 0.00' }}</td>
+                <td>R {{ bank.WithdrawalFee if bank.WithdrawalFee else '0.00' }}</td>
+                <td> {{ bank.CashDepositFee if bank.CashDepositFee else 'R 0.00' }}
+                <td>R {{ '%0.2f'| float(bank.SMSNotificationFee) if bank.SMSNotificationFee else 'R 0.00'  }}</td>
+                <td>R {{ bank.InternalDebitOrderFee if bank.InternalDebitOrderFee else '0.00' }}</td>
+                <td>R {{ bank.ExternalDebitOrderFee if bank.ExternalDebitOrderFee else '0.00' }}</td>
+                <td>R {{ '%0.2f'| float(bank.OnlineTransactionalFee) if bank.OnlineTransactionalFee else 'R 0.00'}} </td>
+                <td><a href="{{ bank.Website }}"> {{ bank.Website }} </a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2024 Bank Comparison Tool. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
