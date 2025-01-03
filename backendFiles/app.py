@@ -23,8 +23,8 @@ def get_banks():
     cursor.execute('SELECT * FROM Banks')
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
-    # return jsonify(banks)
-    return render_template('banks.html', banks=banks)
+    return jsonify(banks)
+    #return render_template('banks.html', banks=banks)
 
 
 @app.route('/accounts', methods=['GET'])
