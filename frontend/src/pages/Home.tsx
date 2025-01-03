@@ -125,16 +125,16 @@ export default function Home() {
 
       {/* section 5 */}
       <section className='container mx-auto mb-48'>
-        <div className='container py-7 bg-blue-100 rounded-2xl'>
+        <div className='py-7 bg-blue-100 rounded-2xl'>
           <div className='text-center'>
-            <h1 className='text-4xl text-wrap font-bold md:text-5xl lg:text-6xl'>
+            <h1 className='text-4xl font-bold md:text-5xl lg:text-6xl'>
               Simplify Your Bank Comparisons with Compare Banks
             </h1>
             <h3 className='py-2 text-base md:text-lg'>
               Easily compare bank packages side-by-side based on location, interest rates, and fees.
             </h3>
           </div>
-          <div className='flex -mb-48 flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-evenly md:space-y-2 lg:gap-2'>
+          <div className='flex -mb-48 items-center flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-evenly md:space-y-2 lg:gap-2'>
           <Card
               index={1}
               title='Select'
