@@ -120,7 +120,10 @@ export default function Home() {
               <li>Get clear visuals of monthly fees and charges</li>
               <li>Make smarter banking choices with comprehensive insights</li>
             </ul>
-            <a className='my-8 inline-block rounded bg-blue-600 px-4 py-3 text-white'>
+            <a
+              href='/compare'
+              className='my-8 inline-block rounded bg-blue-600 px-4 py-3 text-white'
+            >
               Start Your Free Comparison!
             </a>
           </div>
@@ -181,9 +184,12 @@ export default function Home() {
                 Not sure how to compare bank packages? Get in touch with us! Our
                 team is ready to assist you, even before you create an account.
               </p>
-              <button className='my-4 rounded bg-blue-600 px-4 py-2 text-sm text-white lg:px-5 lg:py-4 lg:text-base'>
+              <a
+                href='/compare'
+                className='my-4 inline-block rounded bg-blue-600 px-4 py-2 text-sm text-white lg:px-5 lg:py-4 lg:text-base'
+              >
                 Start Comparing Now!
-              </button>
+              </a>
             </div>
           </div>
         </div>

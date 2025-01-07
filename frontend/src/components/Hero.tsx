@@ -13,9 +13,12 @@ function Hero() {
               Easily compare bank packages side-by-side and make informed
               banking decisions with Compare Banks.
             </p>
-            <button className='my-4 rounded bg-blue-600 px-4 py-2 text-sm text-white lg:px-5 lg:py-4 lg:text-base'>
+            <a
+              href='/compare'
+              className='my-4 inline-block rounded bg-blue-600 px-4 py-2 text-sm text-white lg:px-5 lg:py-4 lg:text-base'
+            >
               Get Started
-            </button>
+            </a>
           </div>
           <div className='flex h-52 w-full items-center justify-center overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
             <img
