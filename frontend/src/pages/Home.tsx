@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
+import image1 from '../assets/react.svg';
 
 export default function Home() {
   return (
@@ -84,9 +85,12 @@ export default function Home() {
                 comparisons
               </li>
             </ul>
-            <button className='my-8 rounded bg-blue-600 px-4 py-3 text-white'>
+            <a
+              href='/compare'
+              className='my-8 inline-block rounded bg-blue-600 px-4 py-3 text-white'
+            >
               Start Your Free Comparison!
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -116,26 +120,27 @@ export default function Home() {
               <li>Get clear visuals of monthly fees and charges</li>
               <li>Make smarter banking choices with comprehensive insights</li>
             </ul>
-            <button className='my-8 rounded bg-blue-600 px-4 py-3 text-white'>
+            <a className='my-8 inline-block rounded bg-blue-600 px-4 py-3 text-white'>
               Start Your Free Comparison!
-            </button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* section 5 */}
       <section className='container mx-auto mb-48'>
-        <div className='py-7 bg-blue-100 rounded-2xl'>
+        <div className='rounded-2xl bg-blue-100 py-7'>
           <div className='text-center'>
             <h1 className='text-4xl font-bold md:text-5xl lg:text-6xl'>
               Simplify Your Bank Comparisons with Compare Banks
             </h1>
             <h3 className='py-2 text-base md:text-lg'>
-              Easily compare bank packages side-by-side based on location, interest rates, and fees.
+              Easily compare bank packages side-by-side based on location,
+              interest rates, and fees.
             </h3>
           </div>
-          <div className='flex -mb-48 items-center flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-evenly md:space-y-2 lg:gap-2'>
-          <Card
+          <div className='-mb-48 flex flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-evenly md:space-y-2 lg:gap-2'>
+            <Card
               index={1}
               title='Select'
               description='Choose multiple banks to compare packages tailored to your needs.'
@@ -173,8 +178,8 @@ export default function Home() {
                 Discover the Benefits of Comparing Banks with Compare Banks
               </h1>
               <p className='my-4 md:text-base lg:text-lg'>
-                Not sure how to compare bank packages? Get in touch with us! 
-                Our team is ready to assist you, even before you create an account.
+                Not sure how to compare bank packages? Get in touch with us! Our
+                team is ready to assist you, even before you create an account.
               </p>
               <button className='my-4 rounded bg-blue-600 px-4 py-2 text-sm text-white lg:px-5 lg:py-4 lg:text-base'>
                 Start Comparing Now!
