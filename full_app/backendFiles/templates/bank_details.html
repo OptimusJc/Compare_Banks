@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ bank.BankName }} Details</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>{{ bank.BankName }}</h1>
+    <p><a href="{{ bank.Website }}" target="_blank">Open Account</a></p>
+
+    <h2>Account Packages</h2>
+    <form method="GET">
+        <label for="filter">Filter by Type:</label>
+        <select name="filter" id="filter" onchange="this.form.submit()">
+            <option value="">All</option>
+            <option value="cheque">Cheque</option>
+            <option value="savings">Savings</option>
+        </select>
+    </form>
+
+    <ul>
+        {% for account in account_types %}
+            {% if not request.args.get('filter') or request.args.get('filter') == account.Type %}
+                <li>
+                    {{ account.PackageName }} - {{ account.Type }} <br />
+                    {% if account.MinimumBalance %}
+                        Minimum Balance: R {{ '%0.2f'|format(account.MinimumBalance|float)}} <br />
+                    {% else %}
+                        Monthly Fee: R 0.00
+                    {% endif %}
+
+                    {% if account.MonthlyFee %}
+                        Monthly Fee: R {{ '%0.2f'|format(account.MonthlyFee|float) }}
+                    {% else %}
+                        Monthly Fee: R 0.00
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+   <table>
+        <thead>
+            <th>Bank Name</th>
+            <th>Package Name</th>
+            <th>Minimum Balance</th>
+            <th>Monthly Fee</th>
+            <>
+        </thead>
+        <tbody>
+            {% for account in account_types %}
+            <tr>
+                <td> {{ bank.BankID }} </td>
+                <td> {{ account.PackageName }} </td>
+                <td> R {{ '%0.2f'| format(account.MinimumBalance)|float if account.MinimumBalance else '0.00'}} </td>
+                <td> R {{ '%0.2f'| format(account.MonthlyFee)| float if account.MonthlyFee else '0.00' }}</td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
