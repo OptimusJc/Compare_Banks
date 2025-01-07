@@ -1,7 +1,10 @@
-from flask import Flask, jsonify, request, render_template
 import sqlite3
 
+from flask import Flask, jsonify, render_template, request
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 
 def get_db_connection():
@@ -24,7 +27,7 @@ def get_banks():
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
     return jsonify(banks)
-    #return render_template('banks.html', banks=banks)
+    # return render_template('banks.html', banks=banks)
 
 
 @app.route('/accounts', methods=['GET'])
@@ -37,13 +40,15 @@ def get_account_types():
     cursor = conn.cursor()
 
     if bank_id:
-        cursor.execute('SELECT * FROM AccountTypes WHERE BankID = ?', (bank_id,))
+        cursor.execute(
+            'SELECT * FROM AccountTypes WHERE BankID = ?', (bank_id,))
     else:
         cursor.execute('SELECT * FROM AccountTypes')
 
     account_types = [dict(row) for row in cursor.fetchall()]
     conn.close()
     return jsonify(account_types)
+
 
 @app.route('/interest_rates', methods=['GET'])
 def get_interest_rates():
@@ -55,7 +60,8 @@ def get_interest_rates():
     cursor = conn.cursor()
 
     if account_type_id:
-        cursor.execute('SELECT * FROM InterestRates WHERE AccountTypeID = ?', (account_type_id,))
+        cursor.execute(
+            'SELECT * FROM InterestRates WHERE AccountTypeID = ?', (account_type_id,))
     else:
         cursor.execute('SELECT * FROM InterestRates')
 
@@ -103,12 +109,12 @@ def compare_banks():
     # joined = ''' SELECT * FROM  InterestRates   WHERE AccountTypeID = ?''' + query
     cursor.execute(query)
 
-    #cursor.execute('SELECT * FROM AccountTypes')
-    
+    # cursor.execute('SELECT * FROM AccountTypes')
+
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
 
-    #return render_template('com.html', banks=banks)
+    # return render_template('com.html', banks=banks)
     return jsonify(banks)
 
 
@@ -120,3 +126,4 @@ def land():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

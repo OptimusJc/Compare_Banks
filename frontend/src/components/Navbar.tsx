@@ -46,14 +46,14 @@ export default function Navbar() {
               About Us
             </a>
           </li>
-          <li className='text-center'>
-            <a
-              href='/login'
-              className='block bg-blue-600 px-4 py-2 text-white hover:bg-blue-500 md:hover:bg-transparent'
-            >
-              Login
-            </a>
-          </li>
+          {/* <li className='text-center'> */}
+          {/*   <a */}
+          {/*     href='/login' */}
+          {/*     className='block bg-blue-600 px-4 py-2 text-white hover:bg-blue-500 md:hover:bg-transparent' */}
+          {/*   > */}
+          {/*     Login */}
+          {/*   </a> */}
+          {/* </li> */}
         </ul>
       </nav>
     </div>

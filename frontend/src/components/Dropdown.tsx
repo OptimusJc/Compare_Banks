@@ -9,6 +9,32 @@ const Dropdown = ({ label }: Dropdown) => {
   const [selectedValue, setSelectedValue] = useState('Select an option');
   const dropdownRef = useRef(null);
 
+  const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        const res = await fetch('http://127.0.0.1:5000/compare');
+        if (!res.ok) {
+          throw new Error('Failed to fetch data!');
+        }
+
+        const data = await res.json();
+        setDatas(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -47,28 +73,31 @@ const Dropdown = ({ label }: Dropdown) => {
         {isOpen && (
           <div className='absolute z-50 mt-10 w-44 rounded-md border border-gray-200 bg-white shadow-lg md:left-[118px] md:mt-44 md:w-48'>
             <ul className='py-2'>
+              {/* TODO: Find a way to iterate over options  */}
+              {/* {datas?.map((data, idx) => { */}
+              {/*   <li key={idx}> */}
+              {/*     <button */}
+              {/*       onClick={() => handleOptionClick('Option 1')} */}
+              {/*       className='block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100' */}
+              {/*     > */}
+              {/*       {data.Type} */}
+              {/*     </button> */}
+              {/*   </li>; */}
+              {/* })} */}
               <li>
                 <button
-                  onClick={() => handleOptionClick('Option 1')}
+                  onClick={() => handleOptionClick('Checking')}
                   className='block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100'
                 >
-                  Option 1
+                  Checking
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleOptionClick('Option 2')}
+                  onClick={() => handleOptionClick('Savings')}
                   className='block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100'
                 >
-                  Option 2
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleOptionClick('Option 3')}
-                  className='block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100'
-                >
-                  Option 3
+                  Savings
                 </button>
               </li>
             </ul>
