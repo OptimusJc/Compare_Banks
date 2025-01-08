@@ -64,4 +64,38 @@
     "MonthlyFee": "int",
     "Website": "https://www.absa.co.za/"
   }
+ 	{
+		    "AccountType": "cheque",
+		        "AccountTypeID": 5,
+			    "BankID": 3,
+			        "BankName": "Nedbank",
+				    "CashDepositFee": "1.60 per 100",
+				        "ExternalDebitOrderFee": 4,
+					    "InternalDebitOrderFee": 4,
+					        "MinimumBalance": 1,
+						    "MonthlyFee": 7,
+						        "OnlineTransactionalFee": 0.50,
+							    "PackageName": "MiGoals",
+							        "SMSNotificationFee": 0.50,
+								    "Type": "Checking",
+								        "Website": "https://www.nedbank.co.za/",
+									    "WithdrawalFee": "11 per R 1000"
+									      },
+									       	{
+											    "AccountType": "Svaings",
+											        "AccountTypeID": 6,
+												    "BankID": 4,
+												        "BankName": "Capitec",
+													    "CashDepositFee": "1.40 per 100",
+													        "ExternalDebitOrderFee": 4,
+														    "InternalDebitOrderFee": 4,
+														        "MinimumBalance": 1,
+															    "MonthlyFee": 7.50,
+															        "OnlineTransactionalFee": 0.50,
+																    "PackageName": "MiGoals",
+																        "SMSNotificationFee": 0.50,
+																	    "Type": "Checking",
+																	        "Website": "https://www.capitecbank.co.za/",
+																		    "WithdrawalFee": "11 per R 1000"
+																		      },
 ]
