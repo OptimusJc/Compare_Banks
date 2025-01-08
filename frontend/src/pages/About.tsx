@@ -8,7 +8,7 @@ export default function About() {
           <h1 className='text-3xl font-bold text-center hover:animate-bounce'>
             About Us @ <span className='text-blue-500'>Compare</span>Banks
           </h1>
-          <div className="text-justify bg-[url('../assets/AboutImg.png')] mt-42">
+          <div className="text-justify bg-[url('../assets/AboutImg.png')]">
             <div className='m-4'>
               <h2 className='font-bold text-center text-base md:text-lg'>Our Mission</h2>
               <p>At CompareBanks, we believe that choosing the right bank shouldn't be a complicated process.
