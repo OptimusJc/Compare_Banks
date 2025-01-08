@@ -1,8 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import Dropdown from '../components/Dropdown';
 
+interface DataType {
+  AcountType: string;
+  AccountTypeID: number;
+  BankID: number;
+  BankName: string;
+  CashDepositFee?: string;
+  ExternalDebitOrderFee?: number;
+  InternalDebitOrderFee?: number;
+  MinimumBalance?: number;
+  MonthlyFee?: number;
+  OnlineTransactionalFee?: number;
+  PackageName: string;
+  Type: string;
+  Website: string;
+  WithdrawalFee?: string;
+}
+
 export default function Compare() {
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState<DataType[]>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -27,6 +44,8 @@ export default function Compare() {
 
     fetchData();
   }, []);
+
+  console.log(datas);
 
   return (
     <div>
@@ -58,6 +77,8 @@ export default function Compare() {
               {/* <Dropdown label='Sort results by' /> */}
             </div>
 
+            {loading ? <div>loading</div> : ''}
+            {error ? <div>Error: {error}</div> : ''}
             {datas?.map((data, idx) => {
               return (
                 <div
@@ -96,10 +117,6 @@ export default function Compare() {
                     <div className='flex flex-col items-start gap-2 px-2 md:w-1/2'>
                       <h3 className='text-lg font-bold'>Package Name</h3>
                       <p className='pb-4 pl-2'>{data.PackageName}</p>
-                      {/* <ul className='ml-7 list-disc'> */}
-                      {/*   <li>cashback</li> */}
-                      {/*   <li>exclusive offers and rewards</li> */}
-                      {/* </ul> */}
                       <h3 className='text-lg font-bold'>Eligibility</h3>
                       <ul className='ml-7 list-disc'>
                         <li>SA resident and a tax resident</li>
@@ -109,42 +126,56 @@ export default function Compare() {
                       <div className='flex flex-col gap-2 text-wrap bg-gray-300 px-2 py-4'>
                         <p className='flex items-center justify-between font-bold'>
                           monthly fee{' '}
-                          <span className='font-normal'>{data.MonthlyFee}</span>
+                          <span className='font-normal'>
+                            {data.MonthlyFee !== null ? data.MonthlyFee : 0}
+                          </span>
                         </p>
                         <p className='flex items-center justify-between font-bold'>
                           minimum balance{' '}
                           <span className='font-normal'>
-                            {data.MinimumBalance}
+                            {data.MinimumBalance !== null
+                              ? data.MinimumBalance
+                              : 0}
                           </span>
                         </p>
                         <p className='flex items-center justify-between font-bold'>
                           withdrawal fee{' '}
                           <span className='font-normal'>
-                            {data.WithdrawalFee}
+                            {data.WithdrawalFee !== null
+                              ? data.WithdrawalFee
+                              : 0}
                           </span>
                         </p>
                         <p className='flex items-center justify-between font-bold'>
                           cash deposit fee{' '}
                           <span className='font-normal'>
-                            {data.CashDepositFee}
+                            {data.CashDepositFee !== null
+                              ? data.CashDepositFee
+                              : 0}
                           </span>
                         </p>
                         <p className='flex items-center justify-between font-bold'>
                           online transaction fee{' '}
                           <span className='font-normal'>
-                            {data.OnlineTrasactionFee}
+                            {data.OnlineTransactionalFee !== null
+                              ? data.OnlineTransactionalFee
+                              : 0}
                           </span>
                         </p>
                         <p className='flex items-center justify-between font-bold'>
                           external debit order fee{' '}
                           <span className='font-normal'>
-                            {data.ExternalDebitOrderFee}
+                            {data.ExternalDebitOrderFee !== null
+                              ? data.ExternalDebitOrderFee
+                              : 0}
                           </span>
                         </p>
                         <p className='flex items-center justify-between font-bold'>
                           internal debit order fee{' '}
                           <span className='font-normal'>
-                            {data.InternalDebitOrderFee}
+                            {data.InternalDebitOrderFee !== null
+                              ? data.InternalDebitOrderFee
+                              : 0}
                           </span>
                         </p>
                       </div>
