@@ -20,7 +20,7 @@ export default function About() {
             <div className='m-4'>
               <h2 className='font-bold text-base md:text-lg'>What We Do</h2>
               <p>We gather and analyze data on various banking products and services, including:</p>
-              <ul className=''>
+              <ul>
                 <li>Checking and savings accounts</li>
                 <li>Mortgages and loans</li>
                 <li>Credit cards</li>
