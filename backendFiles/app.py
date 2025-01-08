@@ -27,7 +27,6 @@ def get_banks():
     banks = [dict(row) for row in cursor.fetchall()]
     conn.close()
     return jsonify(banks)
-    # return render_template('banks.html', banks=banks)
 
 
 @app.route('/accounts', methods=['GET'])
@@ -95,9 +94,6 @@ def get_bank_details(bank_id):
     bank_details['account_types'] = account_types
 
     return jsonify(bank_details)
-#    return render_template('bank_details.html',
-#                           bank=dict(bank),
-#                           account_types=account_types)
 
 
 @app.route('/compare', methods=['GET'])
@@ -126,4 +122,3 @@ def land():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
