@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function About() {
   return (
-    <main>
+    <main className='bg-gradient-to-b from-blue-100 via-white to-blue-200 pt-8'>
       <section className='container mx-auto'>
-        <div className="bg-[url('/../assets/AboutImg.png')] bg-no-repeat mt-42 w-full h-full p-2">
-          <h1 className='text-3xl font-bold text-center'>
+        <div className='w-full h-full p-2'>
+          <h1 className='text-3xl font-bold text-center hover:animate-bounce'>
             About Us @ <span className='text-blue-500'>Compare</span>Banks
           </h1>
           <div className="text-justify bg-[url('../assets/AboutImg.png')] mt-42">
@@ -46,7 +46,7 @@ export default function About() {
             <div className='m-4'>
               <h2 className='font-bold text-center text-base md:text-lg'>Contact Us</h2>
               <p>We value your feedback! If you have any questions, suggestions, or encounter any inaccuracies, please don't hesitate to 
-                contact us @<a className='text-purple-700' href="mailto:">comparebanks@gmail.com</a></p>
+                contact us @<a className='text-purple-700' href="mailto:">comparebanks@gmail.com</a>.</p>
             </div>
           </div>
         </div>
