@@ -1,7 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
-import image1 from '../assets/react.svg';
 
 export default function Home() {
   return (
