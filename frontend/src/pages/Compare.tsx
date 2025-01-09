@@ -16,6 +16,7 @@ interface DataType {
   Type: string;
   Website: string;
   WithdrawalFee?: string;
+  images?: string;
 }
 
 export default function Compare() {
@@ -93,9 +94,9 @@ export default function Compare() {
                   {/* display head */}
                   <div className='border-b-2 border-gray-200 py-4'>
                     <div className='flex gap-2'>
-                      <div className='flex h-20 w-24 items-center justify-center'>
+                      <div className='flex h-20 w-24 items-center justify-center overflow-hidden'>
                         <img
-                          src='https://placehold.co/200x200'
+                          src={account.images}
                           alt='bank logo'
                           className='w-full object-cover'
                         />
