@@ -24,13 +24,14 @@ export default function Compare() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedValue, setSelectedValue] = useState();
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
 
-        const res = await fetch('https://compare-banks.onrender.com/compare');
+        const res = await fetch(`${API_URL}/compare`);
         if (!res.ok) {
           throw new Error('Failed to fetch data!');
         }
