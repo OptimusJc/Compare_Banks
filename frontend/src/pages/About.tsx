@@ -144,11 +144,11 @@ export default function About() {
                   className='group overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-lg'
                 >
                   {/* Image */}
-                  <div className='relative flex h-64 w-full items-center justify-center'>
+                  <div className='relative h-64 w-full'>
                     <img
                       src={member.image}
                       alt={member.name}
-                      className='h-full w-full object-cover'
+                      className='h-full w-full object-cover object-top'
                     />
                   </div>
 
