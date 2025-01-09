@@ -1,32 +1,27 @@
 import React from 'react';
-import Jay from '../assets/images/Jay.jpg';
-import Joseph from '../assets/images/Joseph.jpg';
-import Alphonse from '../assets/images/Mugisha David.jpg';
-import Tshepiso from '../assets/images/Tshepiso.jpg';
-import about_1 from '../assets/about_1.jpeg';
-import about_2 from '../assets/about_2.jpeg';
+import { assets } from '../assets/assets';
 
 export default function About() {
   const teamMembers = [
     {
+      name: 'Joseph Otieno',
+      role: 'Frontend Lead',
+      image: `${assets.Joseph}`,
+    },
+    {
       name: 'Joel Udoye',
       role: 'Frontend Developer',
-      image: `${Jay}`,
+      image: `${assets.Jay}`,
     },
     {
       name: 'Alphonse Mugisha',
       role: 'Database Admin',
-      image: `${Alphonse}`,
+      image: `${assets.MugishaDavid}`,
     },
     {
       name: 'Tshepiso Tlhong',
       role: 'Backend Developer',
-      image: `${Tshepiso}`,
-    },
-    {
-      name: 'Joseph Otieno',
-      role: 'Frontend Lead',
-      image: `${Joseph}`,
+      image: `${assets.Tshepiso}`,
     },
   ];
 
@@ -82,7 +77,7 @@ export default function About() {
               <div className='h-96 bg-gray-300'>
                 {/* Placeholder for Image */}
                 <img
-                  src={about_1}
+                  src={assets.about_1}
                   alt='Team in action 1'
                   className='h-full w-full rounded-lg object-cover'
                 />
@@ -90,7 +85,7 @@ export default function About() {
               <div className='h-96 bg-gray-300'>
                 {/* Placeholder for Image */}
                 <img
-                  src={about_2}
+                  src={assets.about_2}
                   alt='Team in action 2'
                   className='h-full w-full rounded-lg object-cover'
                 />
