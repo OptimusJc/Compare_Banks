@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
+import { assets } from '../assets/assets';
 
 export default function Home() {
   return (
@@ -54,9 +55,9 @@ export default function Home() {
           {/* image */}
           <div className='flex h-80 w-full justify-center overflow-hidden px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
             <img
-              src='https://placehold.co/700x700'
+              src={ assets.heroImage2 }
               alt='section 3 image'
-              className='w-full border-4 border-black bg-blue-100 object-cover'
+              className='w-full h-full bg-blue-100 object-cover'
             />
           </div>
           {/* body */}
@@ -98,10 +99,10 @@ export default function Home() {
       <section className='container mx-auto py-7'>
         <div className='flex flex-col space-y-5 text-balance md:items-center md:justify-around lg:flex-row lg:justify-evenly lg:space-y-0'>
           <div className='order-2 flex h-80 w-full justify-center overflow-hidden px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
-            <img
-              src='https://placehold.co/700x700'
-              alt='Hero Image-2'
-              className='w-full border-4 border-black bg-blue-100 object-cover'
+            <img              
+              src={ assets.heroImage3 }
+              alt='Section 4 Image'
+              className='w-full bg-blue-100 object-cover'
             />
           </div>
           <div className='order-1 w-full px-2 md:pl-24 lg:w-1/2 lg:p-6'>
@@ -162,16 +163,13 @@ export default function Home() {
       </section>
 
       {/* section 6 */}
-      <section></section>
-
-      {/* section 7 */}
       <section>
         <div className='bg-blue-100'>
           <div className='container mx-auto flex flex-col space-y-4 py-8 md:flex-row md:items-center md:justify-center md:px-2 lg:py-32'>
-            <div className='flex h-52 w-full items-center justify-center overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
+            <div className='flex h-full w-full items-center justify-center overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
               <img
-                src='https://placehold.co/1900x1280'
-                alt='Section 7 image'
+                src={ assets.heroImage4 }
+                alt='Section 6 Image'
                 className='w-full object-cover'
               />
             </div>
