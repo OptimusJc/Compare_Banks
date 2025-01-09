@@ -1,9 +1,9 @@
 {
   "name": "fullstack_app",
-  "scripts": {
-    "start": "npm install && concurrently \"npm run start --prefix backendFiles\" \"npm run dev --prefix frontend\""
-  },
   "devDependencies": {
     "concurrently": "^9.1.2"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix backendFiles\" \"npm run dev --prefix frontend\""
   }
 }
