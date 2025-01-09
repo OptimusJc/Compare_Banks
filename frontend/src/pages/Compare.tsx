@@ -47,6 +47,8 @@ export default function Compare() {
     fetchData();
   }, []);
 
+  console.log(datas);
+
   const filteredAccounts = selectedValue
     ? datas?.filter((account) => account.Type === selectedValue)
     : datas;
