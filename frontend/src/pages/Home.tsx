@@ -53,11 +53,11 @@ export default function Home() {
       <section className='container mx-auto py-7'>
         <div className='flex flex-col space-y-5 text-balance md:items-center md:justify-around lg:flex-row lg:justify-evenly lg:space-y-0'>
           {/* image */}
-          <div className='flex h-80 w-full rounded-2xl justify-center overflow-hidden px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
+          <div className='flex h-80 w-full justify-center overflow-hidden rounded-2xl px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
             <img
-              src={ assets.heroImage2 }
+              src={assets.heroImage2}
               alt='section 3 image'
-              className='w-full h-full bg-blue-100 object-cover'
+              className='h-full w-full bg-blue-100 object-cover'
             />
           </div>
           {/* body */}
@@ -98,9 +98,9 @@ export default function Home() {
       {/* section 4 */}
       <section className='container mx-auto py-7'>
         <div className='flex flex-col space-y-5 text-balance md:items-center md:justify-around lg:flex-row lg:justify-evenly lg:space-y-0'>
-          <div className='order-2 flex h-80 w-full rounded-2xl justify-center overflow-hidden px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
-            <img              
-              src={ assets.heroImage3 }
+          <div className='order-2 flex h-80 w-full justify-center overflow-hidden rounded-2xl px-2 md:h-96 md:w-[700px] lg:w-[600px]'>
+            <img
+              src={assets.heroImage3}
               alt='Section 4 Image'
               className='w-full bg-blue-100 object-cover'
             />
@@ -132,15 +132,17 @@ export default function Home() {
 
       {/* section 5 */}
       <section className='container mx-auto mb-48'>
-        <div className='rounded-2xl bg-blue-100 py-7'>
-          <div className='text-center'>
-            <h1 className='text-4xl font-bold md:text-5xl lg:text-6xl'>
-              Simplify Your Bank Comparisons with Compare Banks
-            </h1>
-            <h3 className='py-2 text-base md:text-lg'>
-              Easily compare bank packages side-by-side based on location,
-              interest rates, and fees.
-            </h3>
+        <div className='rounded-2xl bg-blue-100 py-12'>
+          <div className='flex items-center justify-center py-3'>
+            <div className='text-center lg:w-4/5'>
+              <h1 className='text-center text-4xl font-bold md:text-5xl lg:text-6xl'>
+                Simplify Your Bank Comparisons with Compare Banks
+              </h1>
+              <h3 className='py-2 text-base md:text-lg'>
+                Easily compare bank packages side-by-side based on location,
+                interest rates, and fees.
+              </h3>
+            </div>
           </div>
           <div className='-mb-48 flex flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-evenly md:space-y-2 lg:gap-2'>
             <Card
@@ -166,9 +168,9 @@ export default function Home() {
       <section>
         <div className='bg-blue-100'>
           <div className='container mx-auto flex flex-col space-y-4 py-8 md:flex-row md:items-center md:justify-center md:px-2 lg:py-32'>
-            <div className='flex h-full w-full items-center justify-center rounded-l-2xl sm:rounded-xl overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
+            <div className='flex h-full w-full items-center justify-center overflow-hidden rounded-l-2xl sm:rounded-xl md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
               <img
-                src={ assets.heroImage4 }
+                src={assets.heroImage4}
                 alt='Section 6 Image'
                 className='w-full object-cover'
               />
