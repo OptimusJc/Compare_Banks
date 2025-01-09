@@ -20,3 +20,4 @@
 6. The interection between the database and the API was a challenge because of how the information
     was stored.
     There was multiple tables and I had to join them together to get the information I needed.
+

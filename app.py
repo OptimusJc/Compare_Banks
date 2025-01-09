@@ -17,6 +17,12 @@ def get_db_connection():
     return conn
 
 
+@app.route('/', methods=['GET'])
+def home():
+    ''' '''
+    return "Home"
+
+
 @app.route('/banks', methods=['GET'])
 def get_banks():
     """
