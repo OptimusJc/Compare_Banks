@@ -166,7 +166,7 @@ export default function Home() {
       <section>
         <div className='bg-blue-100'>
           <div className='container mx-auto flex flex-col space-y-4 py-8 md:flex-row md:items-center md:justify-center md:px-2 lg:py-32'>
-            <div className='flex h-full w-full items-center justify-center rounded-l-2xl overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
+            <div className='flex h-full w-full items-center justify-center rounded-l-2xl sm:rounded-xl overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
               <img
                 src={ assets.heroImage4 }
                 alt='Section 6 Image'

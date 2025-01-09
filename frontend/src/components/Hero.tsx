@@ -21,7 +21,7 @@ function Hero() {
               Get Started
             </a>
           </div>
-          <div className='flex h-full w-full items-center justify-center rounded-r-xl overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
+          <div className='flex h-full w-full items-center justify-center rounded-r-xl sm:rounded-xl overflow-hidden md:h-60 md:w-1/2 lg:h-96 xl:w-[600px]'>
             <img
               src={ assets.heroImage1 }
               alt='hero image'
