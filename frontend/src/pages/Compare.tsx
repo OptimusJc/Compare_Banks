@@ -24,7 +24,7 @@ export default function Compare() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedValue, setSelectedValue] = useState();
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const fetchData = async () => {
