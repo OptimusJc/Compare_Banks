@@ -24,7 +24,7 @@ export default function Compare() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedValue, setSelectedValue] = useState();
-  const API_URL = import.meta.env.VITE_BACKEND_URL;
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,8 +47,6 @@ export default function Compare() {
 
     fetchData();
   }, []);
-
-  console.log(datas);
 
   const filteredAccounts = selectedValue
     ? datas?.filter((account) => account.Type === selectedValue)
